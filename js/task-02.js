@@ -1,13 +1,12 @@
 const ingredients = ['Potatoes', 'Mushrooms', 'Garlic', 'Tomatoes', 'Herbs', 'Condiments'];
 
-const ingredientsRef = document.querySelector('ul');
+const ingredientsItem = document.createElement('li');
+ingredientsItem.classList.add('item');
+const ingredient = name => {
+  return `<li>${name}</li>`;
+};
+const ingredientsList = ingredients.reduce((acc, element) => acc + ingredient(element), '');
 
-const newArrIngredients = ingredients.map(ingredient => {
-  const ingredientEl = document.createElement(li);
-  ingredientEl.textContent = ingredients.indexOf(ingredient);
-  ingredientEl.classList.add('item');
+const ingredientsRef = document.querySelector('#ingredients');
 
-  return ingredientEl;
-});
-
-ingredientRef.append(...newArrIngredients);
+ingredientsRef.insertAdjacentHTML('afterbegin', ingredientsList);
