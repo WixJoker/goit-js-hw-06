@@ -15,10 +15,8 @@ const images = [
 
 const galleryRef = document.querySelector('.gallery');
 
-const createGallery = () => {
-  galleryRef.insertAdjacentHTML(
-    afterbegin,
-    `<li><img src="${this.image.url}" alt="${this.image.alt}"></li>`
-  );
-};
-console.log(galleryRef);
+const galleryImage = ({ url, alt }) => `<li><img src="${url}" alt="${alt}"></li>`;
+const galleryImages = images.reduce((acc, item) => acc + galleryImage(item), '');
+
+galleryRef.insertAdjacentHTML('afterbegin', galleryImages);
+galleryRef.setAttribute('style', 'display: flex;');
