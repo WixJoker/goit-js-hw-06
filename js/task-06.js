@@ -1,11 +1,11 @@
 const inputData = document.querySelector('#validation-input');
-const greenBorder = document.querySelector('#validation-input.valid');
-const redBorder = document.querySelector('#validation-input.invalid');
-const symbolsNumber = document.querySelector('[data-length]');
 
 inputData.addEventListener('blur', () => {
-  if ((String(inputData.value.trim()).length = symbolsNumber)) {
-    inputData.style.borderColor === greenBorder;
+  if (inputData.value.trim().length === Number(inputData.getAttribute('data-length'))) {
+    inputData.classList.add('valid');
+    inputData.classList.remove('invalid');
+  } else {
+    inputData.classList.add('invalid');
+    inputData.classList.remove('valid');
   }
-  inputData.style.borderColor === redBorder;
 });
