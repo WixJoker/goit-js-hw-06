@@ -1,16 +1,17 @@
 const inputData = document.querySelector('#validation-input');
-const greenColorBorder = document.querySelector('#validation-input.valid');
-const redColorBorder = document.querySelector('#validation-input.invalid');
-const enteredNumber = document.querySelector('[data-length]');
-const relevantNumber = 6;
+const greenBorder = document.querySelector('#validation-input.valid');
+const redBorder = document.querySelector('#validation-input.invalid');
+const symbolsNumber = document.querySelector('[data-length]');
 
-const checkNumber = inputData.addEventListener('blur', onInputBlur);
+// function onInputBlur() {
+//   if (symbolsNumber !== 6) {
+//     inputData === redBorder;
+//   } else inputData === greenBorder;
+// }
 
-function onInputBlur() {
-  if (enteredNumber !== relevantNumber) {
-    inputData.border - color === redColorBorder;
-  } else enteredNumber === relevantNumber;
-  {
-    inputData.border - color === greenColorBorder;
+inputData.onchange = function () {
+  if (inputData.value.length != 6) {
+    inputData.style.borderColor = redBorder;
   }
-}
+  inputData.style.borderColor = greenBorder;
+};
