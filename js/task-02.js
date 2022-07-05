@@ -5,7 +5,9 @@ ingredientsItem.classList.add('item');
 const ingredient = name => {
   return `<li>${name}</li>`;
 };
-const ingredientsList = ingredients.reduce((acc, element) => acc + ingredient(element), '');
+// const ingredientsList = ingredients.reduce((acc, element) => acc + ingredient(element), '');
+
+const ingredientsList = ingredients.map(element => ingredient(element));
 
 const ingredientsRef = document.querySelector('#ingredients');
 
