@@ -12,6 +12,6 @@ function submitingForm(event) {
   if (email.value === '' || password.value === '') {
     return alert('All fields should be filled out!');
   }
-  console.log(`Login: ${email.value}, Password: ${password.value}`);
+  console.log({ Login: `${email.value}`, Password: `${password.value}` });
   event.currentTarget.reset();
 }
