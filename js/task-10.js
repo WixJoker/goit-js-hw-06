@@ -4,21 +4,19 @@ function getRandomHexColor() {
     .padStart(6, 0)}`;
 }
 
-// const divEl = document.createElement('div');
 const divBoxes = document.querySelector('div#boxes');
 
-const inputREf = document.querySelector('[type="number"]');
+const inputRef = document.querySelector('[type="number"]');
 
 const createButton = document.querySelector('[data-create]');
 const destroyButton = document.querySelector('[data-destroy]');
 
 function createBoxes(amount) {
-  amount = inputREf.value;
+  amount = inputRef;
 }
 
 createButton.addEventListener('click', () => {
-  divBoxes.insertAdjacentHTML('afterbegin', '<div></div>')
-    = document.div.style.backgroundColor = getRandomHexColor();
+  divBoxes.insertAdjacentHTML('afterbegin', `<div></div>`);
 });
 
 destroyButton.addEventListener('click', () => {
