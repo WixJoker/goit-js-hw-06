@@ -7,7 +7,7 @@ const ingredient = name => {
 };
 // const ingredientsList = ingredients.reduce((acc, element) => acc + ingredient(element), '');
 
-const ingredientsList = ingredients.map(element => ingredient(element));
+const ingredientsList = ingredients.map(element => ingredient(element)).join('');
 
 const ingredientsRef = document.querySelector('#ingredients');
 
